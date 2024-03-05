@@ -7,7 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const CharacterCard = (props) => {
     return (
         <Fragment>
-            <Card style={{ width: '18rem' }}>
+            <Card className="m-3" style={{ width: '18rem' }}>
             <Avatar
           style={{width: '100%', height: '200px'}}
           avatarStyle = {props.characterData["avatar_style"]}

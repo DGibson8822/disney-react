@@ -2,8 +2,11 @@ import React, { Fragment, useState, useEffect } from 'react';
 import './App.css';
 
 // components
+import { Row, Col } from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner';
 import CharacterCard from './components/CharacterCard';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
 
 function App() {
@@ -31,12 +34,18 @@ function App() {
       <span className="visually-hidden">Loading...</span>
       </Spinner></div> :
       <Fragment>
-        <div className="container">
-          {characters.map( character => (
-            <CharacterCard key={character.id} characterData={character}/>
-          ))}
+        <Container>
+        <Navbar expand="lg" className="bg-body-tertiary">
+          <Navbar.Brand href="#">Disney Character Ideas</Navbar.Brand>
+        </Navbar>
+        <Row>
           
-        </div>
+            {characters.map( character => (
+              <CharacterCard key={character.id} characterData={character}/>
+            ))} 
+          
+        </Row>  
+        </Container>
       </Fragment>
   );
 }
